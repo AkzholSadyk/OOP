@@ -11,7 +11,7 @@ public class Example4 {
         Scanner in = new Scanner(System.in);
 
         tokenizer = new StringTokenizer(in.nextLine(), "+", true);
-
+// test
         try
         {
             leftString   = tokenizer.nextToken();
