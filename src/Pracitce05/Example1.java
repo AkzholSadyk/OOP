@@ -6,14 +6,17 @@ public class Example1
     {
         int     denominator, numerator, ratio;
 
+        try {
+            numerator = 5;
+            denominator = 0;
 
-        numerator   = 5;
-        denominator = 2;
+            ratio = numerator / denominator;
+            System.out.println("The answer is: " + ratio);
 
-        ratio = numerator / denominator;
-        System.out.println("The answer is: "+ratio);
-
-        System.out.println("Done."); // Don't move this line
+            System.out.println("Done."); // Don't move this line
+            }catch(ArithmeticException e) {
+            System.out.println("Divide by 0.");
+            e.printStackTrace();
+        }
     }
 }
-//akoo
