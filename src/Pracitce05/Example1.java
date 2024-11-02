@@ -14,7 +14,7 @@ public class Example1
             System.out.println("The answer is: " + ratio);
 
             System.out.println("Done."); // Don't move this line
-            }catch(ArithmeticException e) {
+        }catch(ArithmeticException e) {
             System.out.println("Divide by 0.");
             e.printStackTrace();
         }
