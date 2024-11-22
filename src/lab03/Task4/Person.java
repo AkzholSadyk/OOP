@@ -2,25 +2,31 @@ package lab03.Task4;
 
 public class Person {
     private String name;
-
-    public Person(String name) {
+    private int ID;
+    public Person(String name, int ID) {
         this.name = name;
+        this.ID = ID;
     }
 
     public String getName() {
         return name;
     }
-
-    @Override
-    public String toString() {
-        return "Person [name= " + name + " ]";
+    public int getID(){
+        return ID;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(obj == null || getClass() != obj.getClass()) return false;
-        Person person = (Person)obj;
-        return name.equals(person.name);
+    public Object Clone(){
+        Person p = new Person(this.name, this.ID);
+        return p;
+    }
+    public boolean equals (Object o) {
+        if (this == o) return true;
+        if (this == null) return false;
+        if(!(o instanceof Person)) return false;
+        Person p = (Person)o;
+        return this.getID() == p.getID();
+    }
+    public String toString(){
+        return "Person:" + getName() + "\nID:" + getID() + '\n';
     }
 }

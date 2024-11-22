@@ -17,7 +17,7 @@ public class Main {
         String result_finding_pizza = "We dont have this pizza!!!";
         String result_havin_alcahol = "You dont have the 21";
 
-        Person pizzaForFind = new Person("Daryn" , 21, 1000, "Peperoni", "YES");
+        Person pizzaForFind = new Person("Daryn" , 17, 1000, "Peperoni", "YES");
 
 
         for(Menu menu : menus) {

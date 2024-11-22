@@ -1,63 +1,43 @@
 package lab03.Task4;
-import java.util.Date;
-import java.util.Vector;
+import java.util.*;
+public class Manager extends Employee{
+    private double bonus = 0;
+    Vector<Employee> employees = new Vector<>();
 
-public class Manager extends Employee {
-    private Vector<Employee> team;
-    private double bonus;
-
-    public Manager(String name, double annualSalary, Date hireDate, String nationalInsuranceNumber, double bonus) {
-        super(name, annualSalary, hireDate, nationalInsuranceNumber);
+    public Manager(String name, int id, double salary, Date date, String nucNumber, double bonus) {
+        super(name, id, salary, date, nucNumber);
         this.bonus = bonus;
-        this.team = new Vector<>();
     }
 
     public double getBonus() {
         return bonus;
     }
-
-    public Vector<Employee> getTeam() {
-        return team;
+    public void addEmployee(Employee e) {
+        employees.add(e);
+    }
+    public void removeEmployee(Employee e) {
+        employees.remove(e);
     }
 
-    @Override
-    public String toString() {
-        return "Manager{" +
-                "name='" + getName() + '\'' +
-                ", annualSalary=" + getAnnualSalary() +
-                ", hireDate=" + getHireDate() +
-                ", nationalInsuranceNumber='" + getNationalInsuranceNumber() + '\'' +
-                ", bonus=" + bonus +
-                ", team=" + team +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (!super.equals(obj)) return false;
-        if (getClass() != obj.getClass()) return false;
-        Manager manager = (Manager) obj;
-        return Double.compare(manager.bonus, bonus) == 0 &&
-                team.equals(manager.team);
+    public Employee clone(){
+        return new Manager(getName(), getID(), getSalary(), getHireDate(), getInsuranceNumber(), getBonus());
     }
-
     @Override
-    public int compareTo(Employee other) {
-        if (other instanceof Manager) {
-            Manager otherManager = (Manager) other;
-            int salaryComparison = Double.compare(this.getAnnualSalary(), otherManager.getAnnualSalary());
-            if (salaryComparison != 0) {
-                return salaryComparison;
-            }
-            return Double.compare(this.bonus, otherManager.bonus);
+    public int compareTo(Employee e) {
+        int ans = super.compareTo(e);
+        if (ans == 0 && e.getClass() == this.getClass()) {
+            if(this.getBonus() > ((Manager) e).getBonus())
+                ans = 1;
+            else if(this.getBonus() < ((Manager) e).getBonus())
+                ans = -1;
         }
-        return super.compareTo(other);
+        return ans;
     }
-
     @Override
-    public Manager clone() {
-        Manager cloned = (Manager) super.clone();
-        cloned.team = (Vector<Employee>) team.clone();
-        return cloned;
+    public String toString(){
+        return super.toString() +
+                "Bonus:" + getBonus() +
+                "\nEmployees:" + employees + '\n';
     }
 }

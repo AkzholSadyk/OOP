@@ -1,64 +1,61 @@
 package lab03.Task4;
 import java.util.Date;
-import java.util.Date;
-
-public class Employee extends Person implements Comparable<Employee>, Cloneable {
-    private double annualSalary;
+public class Employee extends Person implements Comparable<Employee>{
+    private double salary;
     private Date hireDate;
-    private String nationalInsuranceNumber;
+    private String insuranceNumber;
 
-    public Employee(String name, double annualSalary, Date hireDate, String nationalInsuranceNumber) {
-        super(name);
-        this.annualSalary = annualSalary;
+    public Employee(String name, int ID, double salary, Date hireDate, String insuranceNumber) {
+        super(name, ID);
+        this.salary = salary;
         this.hireDate = hireDate;
-        this.nationalInsuranceNumber = nationalInsuranceNumber;
+        this.insuranceNumber = insuranceNumber;
     }
-
-    public double getAnnualSalary() {
-        return annualSalary;
+    Object adam;
+    public double getSalary() {
+        return salary;
     }
-
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
     public Date getHireDate() {
         return hireDate;
     }
-
-    public String getNationalInsuranceNumber() {
-        return nationalInsuranceNumber;
+    public void setHireDate(Date hireDate) {
+        this.hireDate = hireDate;
+    }
+    public String getInsuranceNumber() {
+        return insuranceNumber;
+    }
+    public void setInsuranceNumber(String insuranceNumber) {
+        this.insuranceNumber = insuranceNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "name='" + getName() + '\'' +
-                ", annualSalary=" + annualSalary +
-                ", hireDate=" + hireDate +
-                ", nationalInsuranceNumber='" + nationalInsuranceNumber + '\'' +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (!super.equals(obj)) return false;
-        if (getClass() != obj.getClass()) return false;
-        Employee employee = (Employee) obj;
-        return Double.compare(employee.annualSalary, annualSalary) == 0 &&
-                hireDate.equals(employee.hireDate) &&
-                nationalInsuranceNumber.equals(employee.nationalInsuranceNumber);
-    }
 
-    @Override
-    public int compareTo(Employee other) {
-        return Double.compare(this.annualSalary, other.annualSalary);
+    public Employee clone(){
+        return new Employee(getName(), getID(), getSalary(), getHireDate(), getInsuranceNumber());
     }
-
-    @Override
-    public Employee clone() {
-        try {
-            Employee cloned = (Employee) super.clone();
-            cloned.hireDate = (Date) hireDate.clone();
-            return cloned;
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError();
+    public int compareTo(Employee emp) {
+        if(this.getSalary() > emp.getSalary()){
+            return 1;
         }
+        else if(this.getSalary() < emp.getSalary()){
+            return -1;
+        }
+        return 0;
+    }
+    public boolean equals(Object o) {
+        if(o instanceof Employee){
+            Employee emp = (Employee)o;
+            return o.equals(emp) && this.getHireDate() == emp.getHireDate();
+        }
+        return false;
+    }
+    public String toString(){
+        return  super.toString() +
+                "Salary:" + getSalary() +
+                "\nDate:" + hireDate +
+                "\nInsurance Number:" + insuranceNumber + '\n';
     }
 }
