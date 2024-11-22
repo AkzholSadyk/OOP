@@ -3,7 +3,7 @@ package LabWork02.Problem05;
 public class Test {
     public static void main(String[] args) {
         PhDStudent phDStudent = new PhDStudent("Idontknow", 100, 1);
-        Employee employee = new Employee("AlsoIdontKnow", 50, Grading.BACHELOR);
+        Employee employee = new Employee("AlsoIdontKnow", 50, Grading.JUNIOR);
         Student student = new Student("AlsoIdontKnow2", 15, Degree.MASTER);
 
         Dog dog = new Dog("Bobik", 4);

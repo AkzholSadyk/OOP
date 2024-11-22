@@ -1,7 +1,6 @@
 package lab03.Task6;
 
-import lab03.Task6.Grading;
-import lab03.Task6.Person;
+
 
 
 import java.util.ArrayList;
@@ -19,7 +18,7 @@ public class Employee implements Person {
     private Map<Animal, Person> petReceivedFrom = new HashMap<>();
 
     public Employee() {
-        // Default constructor
+
     }
 
     public Employee(String name, int age, Grading grading) {
@@ -28,7 +27,7 @@ public class Employee implements Person {
         this.grading = grading;
     }
 
-    // Grading-specific methods
+
     public void setGrading(Grading grading) {
         this.grading = grading;
     }
@@ -37,7 +36,7 @@ public class Employee implements Person {
         return grading;
     }
 
-    // Implementations of Person interface methods
+
     @Override
     public void setName(String name) {
         this.name = name;

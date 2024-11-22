@@ -1,6 +1,6 @@
 package lab03.Task6;
 
-import lab03.Task6.Person;
+
 
 import java.util.Vector;
 

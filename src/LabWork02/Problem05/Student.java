@@ -1,5 +1,6 @@
 package LabWork02.Problem05;
 
+
 public class Student extends Person {
     private Degree degree;
 
@@ -26,7 +27,7 @@ public class Student extends Person {
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) return false;
-        Student s = (Student) obj;
+        lab03.Task6.Student s = (lab03.Task6.Student) obj;
         return s.degree == this.degree;
     }
 

@@ -8,7 +8,7 @@ public class Dog implements Animal {
     private int age;
 
     public Dog() {
-        // Default constructor
+
     }
 
     public Dog(String name, int age) {

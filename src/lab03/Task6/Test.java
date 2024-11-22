@@ -15,19 +15,24 @@ public class Test {
 
 
 
-        student.assignPet(fish);
+
+        student.assignPet(cat);
         student.leavePetWith(cat, employee);
         student.retrievePetFrom(cat, employee);
         PersonRegistry.addPerson(student);
 
-        phDStudent.assignPet(cat);
-        phDStudent.leavePetWith(cat, employee);
-        phDStudent.retrievePetFrom(cat, employee);
+
+        //dog
+        phDStudent.assignPet(dog);
+        phDStudent.leavePetWith(dog, employee);
+        phDStudent.retrievePetFrom(dog, employee);
         PersonRegistry.addPerson(phDStudent);
 
-        employee.assignPet(dog);
-        employee.leavePetWith(dog, phDStudent);
-        employee.retrievePetFrom(dog, phDStudent);
+
+        //dog
+        employee.assignPet(fish);
+        employee.leavePetWith(fish, phDStudent);
+        employee.retrievePetFrom(fish, phDStudent);
         PersonRegistry.addPerson(employee);
 
 

@@ -1,6 +1,7 @@
 package lab03.Task6;
 
 
+
 import java.util.Objects;
 
 public interface Person {
@@ -11,7 +12,7 @@ public interface Person {
     void setAge(int age);
     int getAge();
 
-    void setOccupation(String occupation);
+
     String getOccupation();
 
 
@@ -24,31 +25,31 @@ public interface Person {
     void leavePetWith(Animal animal, Person person);
     void retrievePetFrom(Animal animal, Person person);
 
+
     Person getWhoReceivedPet(Animal animal);
     Person getWhoGavePet(Animal animal);
 
-    @Override
-    default boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || !(obj instanceof Person)) return false;
-        Person p = (Person) obj;
-        return this.getName().equals(p.getName()) && this.getAge() == p.getAge();
+
+
+    static boolean equals(Person p1, Person p2) {
+        if (p1 == p2) return true;
+        if (p1 == null || p2 == null) return false;
+        return p1.getName().equals(p2.getName()) && p1.getAge() == p2.getAge();
     }
 
-    @Override
-    default int hashCode() {
-        return Objects.hash(getName(), getAge());
+
+    static int hashCode(Person person) {
+        return Objects.hash(person.getName(), person.getAge());
     }
 
-    @Override
-    default String toString() {
+
+    static String toString(Person person) {
         return "Person[" +
-                "name='" + getName() + '\'' +
-                ", age=" + getAge() +
+                "name='" + person.getName() + '\'' +
+                ", age=" + person.getAge() +
                 ']';
     }
 }
-
 
 
 

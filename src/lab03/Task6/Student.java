@@ -1,7 +1,6 @@
 package lab03.Task6;
 
-import lab03.Task6.Degree;
-import lab03.Task6.Person;
+
 
 import java.util.Objects;
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public class Student implements Person {
         this.degree = degree;
     }
 
-    // Getter and Setter for degree
+
     public void setDegree(Degree degree) {
         this.degree = degree;
     }
@@ -35,7 +34,7 @@ public class Student implements Person {
         return degree;
     }
 
-    // Implementing methods from the Person interface
+
     @Override
     public void setName(String name) {
         this.name = name;

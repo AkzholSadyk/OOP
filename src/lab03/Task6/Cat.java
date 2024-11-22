@@ -1,6 +1,6 @@
 package lab03.Task6;
 
-import lab03.Task6.Animal;
+
 
 
 public class Cat implements Animal {
@@ -8,7 +8,7 @@ public class Cat implements Animal {
     private int age;
 
     public Cat() {
-        // Default constructor
+
     }
 
     public Cat(String name, int age) {

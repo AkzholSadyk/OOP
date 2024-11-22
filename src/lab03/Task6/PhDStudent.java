@@ -15,7 +15,7 @@ public class PhDStudent implements Person {
     private Map<Animal, Person> petReceivedFrom = new HashMap<>();
 
     public PhDStudent() {
-        // Default constructor
+
     }
 
     public PhDStudent(String name, int age, int level) {
@@ -24,7 +24,7 @@ public class PhDStudent implements Person {
         this.level = level;
     }
 
-    // Unique PhDStudent behavior
+
     public void setLevel(int level) {
         this.level = level;
     }
@@ -33,7 +33,7 @@ public class PhDStudent implements Person {
         return level;
     }
 
-    // Implementations of Person interface methods
+
     @Override
     public void setName(String name) {
         this.name = name;
