@@ -1,42 +1,32 @@
-package LabWork02.Problem05;
+package lab03.Task6;
+
+
 import java.util.Objects;
 
-
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-
-import java.util.List;
-import java.util.Map;
-
 public interface Person {
-    // Methods for basic details
+
     void setName(String name);
     String getName();
 
     void setAge(int age);
     int getAge();
 
-    // Abstract method for occupation
+    void setOccupation(String occupation);
     String getOccupation();
 
-    // Pet management methods
+
     void assignPet(Animal animal);
     void removePet(Animal animal);
     boolean hasPet(Animal animal);
     boolean hasPets();
 
-    // Pet transfer methods
+
     void leavePetWith(Animal animal, Person person);
     void retrievePetFrom(Animal animal, Person person);
 
-    // Access transfer records
     Person getWhoReceivedPet(Animal animal);
     Person getWhoGavePet(Animal animal);
 
-    // Default implementation for equality and hash code
     @Override
     default boolean equals(Object obj) {
         if (this == obj) return true;
@@ -61,6 +51,12 @@ public interface Person {
 
 
 
+
+//import java.util.ArrayList;
+//import java.util.HashMap;
+//import java.util.List;
+//import java.util.Objects;
+//
 //public abstract class Person {
 //    private String name;
 //    private int age;
@@ -70,7 +66,7 @@ public interface Person {
 //    private HashMap<Animal, Person> petReceivedFrom;
 //
 //    {
-//        animals = new ArrayList<Animal>();
+//        animals = new ArrayList<>();
 //        petTransferredTo = new HashMap<>();
 //        petReceivedFrom = new HashMap<>();
 //    }
