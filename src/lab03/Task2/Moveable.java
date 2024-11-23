@@ -7,7 +7,5 @@ interface Moveable {
         System.out.println("back");
     }
 
-//    у интерфейса нету конструктора и атрибута "public static final" = constant
-//    интерфейсы отвечает только за дейст
-//    все методы публичные
+
 }

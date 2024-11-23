@@ -5,8 +5,6 @@ public class TesterForInterface {
         Car car = new Car();
         Dog dog = new Dog();
 
-//        car.move();
-//        dog.move();
 
         Moveable[] moveables = new Moveable[2];
         moveables[0] = car;

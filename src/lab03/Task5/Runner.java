@@ -1,10 +1,8 @@
 package lab03.Task5;
 import lab03.Task4.Employee;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Date;
-import java.util.* ;
+
 public class Runner {
     public static void main(String[] args) {
         System.out.println();
@@ -22,7 +20,7 @@ public class Runner {
         Time[] namazTime_11nov = {
                 new Time(17,53,0), //Құптан
                 new Time(11,39,0), //Бесін
-                new Time(5,19,0),//Таң
+                new Time(5,19,0),  //Таң
                 new Time(14,53,0), //Екінті
                 new Time(16,35,0),  //Ақшам
         };
